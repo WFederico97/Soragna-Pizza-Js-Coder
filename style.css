@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar-logo {
+  height: 7em;
+  width: 7em;
+}
+
+body {
+  background-image: url(assets/images/backgroundPizzarra.jpg);
+}
+
+/*****Index****/
+#indexCard h5 {
+  font-size: 18px;
+}
+
+#indexCard p {
+  font-size: 12px;
+}
+
+.imgCard1 {
+  height: 12em;
+  width: 12em;
+}
+
+.imgCard2 {
+  height: 12em;
+  width: 12em;
+}
+
+.imgCard3 {
+  height: 12em;
+  width: 12em;
+}
+
+#myCarouselIndex img {
+  height: 18em;
+  width: 30em;
+}
+/*# sourceMappingURL=style.css.map */
