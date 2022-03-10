@@ -11,6 +11,9 @@ body {
 }
 /*****Index****/
 #indexCard {
+    h2{
+        font-size: 20px;
+    }
     h5{
         font-size: 18px;
     }
@@ -21,19 +24,38 @@ body {
 .imgCard1 {
     height: 12em;
     width: 12em;
+    border-radius: 20%;
 }
 .imgCard2 {
     height: 12em;
     width: 12em;
+    border-radius: 20%;
 }
 .imgCard3 {
     height: 12em;
     width: 12em;
+    border-radius: 20%;
 }
 
-#myCarouselIndex {
+#carousel1 {
     img {
         height: 18em;
         width: 30em;
+        border-radius: 20%;
     }
+}
+
+/******Carta*****/
+.carta img {
+    padding: 1em;
+  -w: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  height: 25em;
+  width: 20em;
+}
+.carta img:hover {
+    -webkit-filter: grayscale(0);
+	filter: grayscale(0);
 }
