@@ -1,4 +1,4 @@
-* {
+@-webkit-keyframes animate__fadeIn {}@keyframes animate__fadeIn {}@-webkit-keyframes animate__zoomIn {}@keyframes animate__zoomIn {}@-webkit-keyframes animate__fadeInDown {}@keyframes animate__fadeInDown {}@-webkit-keyframes animate__fadeInRight {}@keyframes animate__fadeInRight {}* {
   margin: 0;
   padding: 0;
 }
@@ -64,5 +64,12 @@ body {
 .carta img:hover {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
+}
+
+/*********Salon*****/
+#imgCarousel2 {
+  max-height: auto;
+  width: auto;
+  border-radius: 20%;
 }
 /*# sourceMappingURL=style.css.map */

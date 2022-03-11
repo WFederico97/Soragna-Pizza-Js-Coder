@@ -54,11 +54,82 @@
     </header>
 
     <main>
-
+        <h1 class="titulo d-flex justify-content-center">¿Cenar en Soragna? No dudes en comunicárnoslo</h1>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12 mx-auto">
+                <div class="well well-sm">
+                  <form class="form-horizontal" method="post">
+                    <fieldset>
+                      <legend class="text-center header text-white titulo">¡Haga su reserva!</legend>
+      
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"><i class="text-white">Nombre</i></span>
+                        <div class="col-md-8">
+                          <input id="fname" name="name" type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"><i class="text-white">Apellido</i></span>
+                        <div class="col-md-8">
+                          <input id="lname" name="name" type="text" class="form-control">
+                        </div>
+                      </div>
+      
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"><i class="text-white">Email</i></span>
+                        <div class="col-md-8">
+                          <input id="email" name="email" type="text" class="form-control">
+                        </div>
+                      </div>
+      
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"><i class="text-white">Telefono</i></span>
+                        <div class="col-md-8">
+                          <input id="phone" name="phone" type="text" class="form-control">
+                        </div>
+                      </div>
+      
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"><i class="text-white">Dejanos tu mensaje</i></span>
+                        <div class="col-md-8">
+                          <textarea class="form-control" id="message" name="message" placeholder="Por favor, especificar la cantidad de comensales y horario en el que desee realizar la reserva" rows="7"></textarea>
+                        </div>
+                      </div>
+      
+                      <div class="form-group">
+                        <div class="col-md-12 text-center">
+                          <button type="submit" class="btn btn-primary btn-lg ">Enviar</button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
 
-    <footer>
-
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+            <span class="text-muted" id="trademark">© Netderico Solutions, 2022</span>
+        </div>
+    
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="contacto.html"><i class="fa-brands fa-whatsapp fa-2xl m-1"
+                        id="whatsappIcon"></i></a></li>
+            <li class="ms-3"><a class="text-muted"
+                    href="https://www.google.com/maps/place/John's+of+Bleecker+St./@40.7316187,-74.0034468,15z/data=!4m2!3m1!1s0x0:0x41ca6e3a2f6d4e74?sa=X&ved=2ahUKEwic0ayT8Lb2AhV7r5UCHcoXDwAQ_BJ6BAgsEAU"><i
+                        class="fa-solid fa-map-location-dot fa-2xl m-1" id="locationIcon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="contacto.html"><i
+                        class="fa-solid fa-calendar-check fa-2xl m-1"></i></a></li>
+        </ul>
     </footer>
 
 </body>

@@ -1,3 +1,6 @@
+@import 'vars';
+@import 'keyframes';
+
 *{
     margin: 0;
     padding: 0;
@@ -58,4 +61,10 @@ body {
 .carta img:hover {
     -webkit-filter: grayscale(0);
 	filter: grayscale(0);
+}
+/*********Salon*****/
+#imgCarousel2{
+    max-height: auto;
+    width: auto;
+    border-radius: 20%;
 }
