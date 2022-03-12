@@ -1,44 +1,77 @@
 @import 'vars';
 @import 'keyframes';
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=BhuTuka+Expanded+One&family=Caveat:wght@400;500;600;700&family=Kaushan+Script&family=Lobster&family=Mukta:wght@200;300;600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
 }
 #navbar-logo {
-    height: 7em;
-    width: 7em;
+    height: $heightLogo;
+    width: $widthLogo;
 }
 body {
-    background-image: url(assets/images/backgroundPizzarra.jpg);
+    background-image: $fondoIndex;
 }
 /*****Index****/
-#indexCard {
-    h2{
-        font-size: 20px;
+.index{
+    h1 {
+        text-shadow: $textEffectBlue;
+        animation: fadeIn 3s ease normal;
+        font-family: 'Abril Fatface', cursive;
     }
+    .lead{
+        text-shadow: $textEffect;
+        animation: fadeInRight 2s ease-in-out normal;
+        font-family: 'Abril Fatface', cursive;
+    }
+    p{
+        text-shadow: $textEffect;
+        font-family: 'Abril Fatface', cursive;
+    }
+    h2{
+        text-shadow: $textEffectBlue;
+        text-decoration: underline;
+        font-family: 'Abril Fatface', cursive;
+    }
+}
+#indexCard {
     h5{
         font-size: 18px;
+        text-shadow: $textEffectBlue;
+        font-family: 'Abril Fatface', cursive;
     }
     p {
         font-size: 12px;
+        text-shadow: $textEffect;
+        font-family: 'Abril Fatface', cursive;
     }
 }
-.imgCard1 {
+.imgCard {
     height: 12em;
     width: 12em;
     border-radius: 20%;
+    display:inline-block;
+    position:relative;
 }
-.imgCard2 {
-    height: 12em;
-    width: 12em;
-    border-radius: 20%;
+.imgCard:hover {
+    opacity: 0.15;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    -ms-transition: opacity 500ms;
+    transition: opacity 500ms;
 }
-.imgCard3 {
-    height: 12em;
-    width: 12em;
-    border-radius: 20%;
+
+.texto-div{
+    position:absolute;
+    top:auto;
+    left:auto;
+    z-index:-2;
+    padding: 30px;
+    margin:auto;
+    font-size: 16px;
 }
+  
 
 #carousel1 {
     img {
@@ -49,6 +82,10 @@ body {
 }
 
 /******Carta*****/
+.carta h1 {
+    text-shadow: $textEffectBlue;
+    font-family: 'Abril Fatface', cursive;
+}
 .carta img {
     padding: 1em;
   -w: grayscale(100%);
@@ -62,9 +99,93 @@ body {
     -webkit-filter: grayscale(0);
 	filter: grayscale(0);
 }
+.carta p {
+    text-shadow: $textEffect;
+    font-family: 'Abril Fatface', cursive;
+}
 /*********Salon*****/
+.salon {
+    h1 {
+        text-shadow: $textEffectBlue;
+        font-family: 'Abril Fatface', cursive;
+    }
+    h2 {
+        text-shadow: $textEffectBlue;
+        font-family: 'Abril Fatface', cursive;
+    }
+    p {
+        text-shadow: $textEffect;
+        animation: fadeInRight 3s ease 0s normal;
+        font-family: 'Abril Fatface', cursive;
+    }
+
+}
+.salonImg {
+    animation: fadeInDown 2s ease 0s normal
+}
 #imgCarousel2{
     max-height: auto;
     width: auto;
     border-radius: 20%;
+}
+
+/********Productos*****/
+.card-img-top {
+    height: 20em;
+    width: 20em;
+    padding: 1em;
+    border-radius: 30px;
+    transition: all;
+    -webkit-transition:all 1.9s ease;
+    -moz-transition:all 1.9s ease;
+    -o-transition:all 1.9s ease;
+    -ms-transition:all 1.9s ease;
+}
+.card-img-top:hover {
+    -webkit-transform:scale(1.25);
+    -moz-transform:scale(1.25);
+    -ms-transform:scale(1.25);
+    -o-transform:scale(1.25);
+    transform:scale(1.25);
+}
+.card-title {
+    text-shadow: $textEffect;
+    font-family: 'Abril Fatface', cursive;
+}
+
+/******Elaboracion*****/
+.elaboracion {
+    h1{
+        text-shadow: $textEffectBlue;
+        font-family: 'Abril Fatface', cursive;
+    }
+    h2{
+        text-shadow: $textEffectBlue;
+        font-family: 'Abril Fatface', cursive;
+    }
+    p{
+        text-shadow: $textEffect;
+        animation: fadeInRight 3s ease 0s normal;
+        font-family: 'Abril Fatface', cursive;
+    }
+}
+.elaboracionImg {
+    height: 30em;
+    width: 30em;
+    animation: fadeInDown 2s ease 0s normal
+}
+/*****Contacto*****/
+.contacto{
+    h1{
+        text-shadow: $textEffectBlue;
+        font-family: 'Abril Fatface', cursive;
+    }
+    .header {
+        text-shadow: $textEffectBlue;
+        font-family: 'Abril Fatface', cursive;
+    }
+    .textoForm {
+        text-shadow: $textEffect;
+        font-family: 'Abril Fatface', cursive;
+    }
 }
