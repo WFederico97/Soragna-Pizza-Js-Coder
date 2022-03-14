@@ -202,4 +202,22 @@ body {
   text-shadow: 3px 3px 3px crimson;
   font-family: 'Abril Fatface', cursive;
 }
+
+/*****Footer***/
+#trademark {
+  color: #25d366;
+  text-shadow: 3px 3px 3px crimson;
+}
+
+#locationIcon {
+  color: #4285f4;
+}
+
+#whatsappIcon {
+  color: #25d366;
+}
+
+#calendar {
+  color: #ea4335;
+}
 /*# sourceMappingURL=style.css.map */
