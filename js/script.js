@@ -1,3 +1,4 @@
+/*Declaracion de arrays */
 let pizzas = ["Margherita", "4 stagioni", "Esuberante", "La regina"];
 let pastas = ["Quattro Formaggi", "Renato", "Frutti di mare", "Parisienne"];
 let vinos = ["Espumantes", "Rosso", "Bianco", "Blends"];
@@ -6,7 +7,9 @@ let carta = {
     pastas: pastas,
     vinos: vinos,
 }
+/*array del carrito a pushear */
 let carrito = []
+/*Saludo al usuario */
 const saludar = () => {
     let nombre;
 
@@ -17,7 +20,7 @@ const saludar = () => {
     alert(`¡Ciao ${nombre}!, bienvenido a Soragna`);
 };
 saludar()
-
+/*Funcion principal */
 const productos = () => {
     let opcionesProductos = parseInt(prompt(`Elija una de las siguientes opciones del menu:\n 1)Pizzas\n 2)Pastas\n 3)Vinos`));
     let nombre;
