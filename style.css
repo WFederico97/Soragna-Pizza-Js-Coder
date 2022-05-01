@@ -207,6 +207,8 @@ body {
 #trademark {
   color: #25d366;
   text-shadow: 3px 3px 3px crimson;
+  height: 12em;
+  width: 12em;
 }
 
 #locationIcon {
