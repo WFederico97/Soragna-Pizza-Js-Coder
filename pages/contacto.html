@@ -55,66 +55,33 @@
 
   <main class="contacto">
     <h1 class="titulo d-flex justify-content-center text-white">¿Cenar en Soragna? No dudes en comunicárnoslo</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 ">
-          <div class="well well ">
-            <form class="form-horizontal" method="post">
-              <fieldset>
-                <legend class="text-center header text-white titulo">¡Haga su reserva!</legend>
-
-                <div class="form-group d-flex justify-content-center ">
-                  <span class="textoForm col-md-1 col-md-offset-2 text-center p-3"><i
-                      class="text-white">Nombre</i></span>
-                  <div class="col-md-8 m-auto">
-                    <input id="fname" name="name" type="text" class="form-control">
-                  </div>
-                </div>
-                <div class="form-group d-flex justify-content-center  ">
-                  <span class="textoForm col-md-1 col-md-offset-2 text-center p-3"><i
-                      class="text-white">Apellido</i></span>
-                  <div class="col-md-8 m-auto">
-                    <input id="lname" name="name" type="text" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group d-flex justify-content-center ">
-                  <span class="textoForm col-md-1 col-md-offset-2 text-center p-3"><i
-                      class="text-white">Email</i></span>
-                  <div class="col-md-8 m-auto">
-                    <input id="email" name="email" type="text" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group d-flex justify-content-center  ">
-                  <span class=" textoForm col-md-1 col-md-offset-2 text-center p-3"><i
-                      class="text-white">Telefono</i></span>
-                  <div class="col-md-8 m-auto">
-                    <input id="phone" name="phone" type="text" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group d-flex justify-content-center">
-                  <span class="textoForm col-md-1 col-md-offset-2 text-center p-3"><i class="text-white">Dejanos tu
-                      mensaje</i></span>
-                  <div class="col-md-8 m-auto">
-                    <textarea class="form-control" id="message" name="message"
-                      placeholder="Por favor, especificar la cantidad de comensales y horario en el que desee realizar la reserva"
-                      rows="7"></textarea>
-                  </div>
-                </div>
-
-                <div class="form-group d-flex justify-content-center">
-                  <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary btn-lg ">Enviar</button>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
+    <div class="container ">
+      <form class="row g-3 text-white">
+        <div class="col-md-6">
+          <label for="formEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="formEmail">
+        </div>
+        <div class="col-md-6">
+          <label for="formNombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="formNombre">
+        </div>
+        <div class="col-12">
+          <label for="formMensaje" class="form-label"></label>
+          <textarea class="form-control" placeholder="Escríbanos" id="formMensaje" style="height: 18em"></textarea>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Quiero suscribirme al newsletter
+            </label>
           </div>
         </div>
-      </div>
-    </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-success">Reservar</button>
+        </div>
+      </form>
+  </div>
   </main>
 
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

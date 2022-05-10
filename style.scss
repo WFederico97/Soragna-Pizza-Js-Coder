@@ -86,23 +86,17 @@ body {
     text-shadow: $textEffectBlue;
     font-family: 'Abril Fatface', cursive;
 }
-.carta img {
-    padding: 1em;
-  -w: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-  height: 25em;
-  width: 20em;
-}
-.carta img:hover {
-    -webkit-filter: grayscale(0);
-	filter: grayscale(0);
-}
+
 .carta p {
     text-shadow: $textEffect;
     font-family: 'Abril Fatface', cursive;
 }
+
+.card img {
+    height: 16em;
+    width: 16em;
+}
+
 /*********Salon*****/
 .salon {
     h1 {
@@ -191,14 +185,12 @@ body {
 }
 
 /*****Footer***/
-// #footer-logo {
-//     height: 6em;
-//     width: 6em;
-// }
+
 #trademark {
     color: #25d366;
     text-shadow: $textEffect;
-
+    height: 16em;
+    width: 16em;
 }
 #locationIcon {
     color: #4285f4
