@@ -5,13 +5,21 @@
     margin: 0;
     padding: 0;
 }
+body {
+    background-image: $fondoIndex;
+}
+//Header Soragna
 #navbar-logo {
     height: $heightLogo;
     width: $widthLogo;
 }
-body {
-    background-image: $fondoIndex;
+
+#navbarSoragna a {
+    font-family: 'Abril Fatface', cursive;
+    text-shadow: $textEffectBlue;
+    font-size: larger;
 }
+
 /*****Index****/
 .index{
     h1 {
@@ -87,14 +95,39 @@ body {
     font-family: 'Abril Fatface', cursive;
 }
 
+.card h5{
+    text-shadow: $textEffectBlue;
+    font-family: 'Abril Fatface', cursive;
+}
+
 .carta p {
     text-shadow: $textEffect;
     font-family: 'Abril Fatface', cursive;
+    color: #ffffff;
 }
 
 .card img {
     height: 16em;
     width: 16em;
+    padding: 1em;
+    align-self: flex-end;
+    border-radius: 15%;
+}
+
+.cardCarta {
+    transition: all;
+    -webkit-transition:all 1.9s ease;
+    -moz-transition:all 1.9s ease;
+    -o-transition:all 1.9s ease;
+    -ms-transition:all 1.9s ease;
+}
+
+.cardCarta:hover {
+    -webkit-transform:scale(1.10);
+    -moz-transform:scale(1.10);
+    -ms-transform:scale(1.10);
+    -o-transform:scale(1.10);
+    transform:scale(1.10);
 }
 
 /*********Salon*****/
@@ -189,8 +222,8 @@ body {
 #trademark {
     color: #25d366;
     text-shadow: $textEffect;
-    height: 16em;
-    width: 16em;
+    height: 10em;
+    width: 10em;
 }
 #locationIcon {
     color: #4285f4

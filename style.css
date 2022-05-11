@@ -5,13 +5,19 @@
   padding: 0;
 }
 
+body {
+  background-image: url(./assets/images/backgroundPizzarra.jpg);
+}
+
 #navbar-logo {
   height: 7em;
   width: 7em;
 }
 
-body {
-  background-image: url(./assets/images/backgroundPizzarra.jpg);
+#navbarSoragna a {
+  font-family: 'Abril Fatface', cursive;
+  text-shadow: 3px 3px 3px #1453dc;
+  font-size: larger;
 }
 
 /*****Index****/
@@ -88,14 +94,38 @@ body {
   font-family: 'Abril Fatface', cursive;
 }
 
+.card h5 {
+  text-shadow: 3px 3px 3px #1453dc;
+  font-family: 'Abril Fatface', cursive;
+}
+
 .carta p {
   text-shadow: 3px 3px 3px crimson;
   font-family: 'Abril Fatface', cursive;
+  color: #ffffff;
 }
 
 .card img {
   height: 16em;
   width: 16em;
+  padding: 1em;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border-radius: 15%;
+}
+
+.cardCarta {
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition: all 1.9s ease;
+  -moz-transition: all 1.9s ease;
+  -o-transition: all 1.9s ease;
+  -ms-transition: all 1.9s ease;
+}
+
+.cardCarta:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /*********Salon*****/
@@ -196,8 +226,8 @@ body {
 #trademark {
   color: #25d366;
   text-shadow: 3px 3px 3px crimson;
-  height: 16em;
-  width: 16em;
+  height: 10em;
+  width: 10em;
 }
 
 #locationIcon {
