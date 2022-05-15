@@ -20,77 +20,77 @@ const Carta = [
 
     },
     {
-        id: 1,
+        id: 2,
         tipo: "Pizza",
         nombre:"Margherita",
         precio: 1000,
 
     },
     {
-        id: 1,
+        id: 3,
         tipo: "Pizza",
         nombre:"Rucula",
         precio: 1200,
 
     },
     {
-        id: 1,
+        id: 4,
         tipo: "Pizza",
         nombre:"Aglio e Cepolla",
         precio: 1200,
 
     },
     {
-        id: 1,
+        id: 5,
         tipo: "Pasta",
         nombre:"Spaghetti alla Carbonara",
         precio: 520,
 
     },
     {
-        id: 1,
+        id: 6,
         tipo: "Pasta",
         nombre:"Penne Rigatti Mediterráneo",
         precio: 750,
 
     },
     {
-        id: 1,
+        id: 7,
         tipo: "Pasta",
         nombre:"Frutti di Mare",
         precio: 980,
 
     },
     {
-        id: 1,
+        id: 8,
         tipo: "Pasta",
         nombre:"Pappardelle alla Bolognese",
         precio: 650,
 
     },
     {
-        id: 1,
+        id: 9,
         tipo: "Vino",
         nombre:"Chateaneuf du Pape",
         precio: 1500,
 
     },
     {
-        id: 1,
+        id: 10,
         tipo: "Vino",
         nombre:"Campo Viejo Rioja DOM",
         precio: 950,
 
     },
     {
-        id: 1,
+        id: 11,
         tipo: "Vino",
         nombre:"Burra Brook vino blanco",
         precio: 1100,
 
     },
     {
-        id: 1,
+        id: 12,
         tipo: "Vino",
         nombre:"Madame Cliquot",
         precio: 15000,
