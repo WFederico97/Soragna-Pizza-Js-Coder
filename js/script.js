@@ -1,124 +1,175 @@
 /*Saludo al usuario */
-const divSaludo = document.querySelector("#SaludoUsuario");
-const containerJs = document.querySelector("#CarritoDeCompras")
 const saludar = () => {
-    alert("¡Bienvenido a Soragna Pizza e Pasta!");
-    let nombre = prompt("Ingrese su nombre: ");
-    while(nombre === "" || !isNaN(parseInt(nombre))){
-        nombre = prompt("Ingrese solo valores alfabéticos por favor : ")
-    }
-    divSaludo.innerHTML = `<h2>!Ciao, ${nombre.toUpperCase()}!</h2>`
-};
-
-saludar();
-
-
-//Constructor de carta 
-class Productos {
-    constructor(id, tipo, nombre, precio) {
-        this.id = id;
-        this.tipo = tipo;
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-}
-//Pizzas
-const Margherita = new Productos(1,"Pizza","Margherita",950);
-const cuatroStagioni = new Productos(2,"Pizza","4 Stagioni",1000);
-const Esuberante = new Productos(3,"Pizza","Esuberante",1200);
-const LaRegina  = new Productos(4,"Pizza","La Regina",1200);
-//Pastas
-const QuattroFormaggi = new Productos(5,"Pasta","Quattro Formaggi",520);
-const Renato = new Productos(6,"Pasta","Renato",750);
-const FruttiDiMare = new Productos(7,"Pasta","Frutti di Mare",980);
-const Parisienne = new Productos(8,"Pasta","Parissienne",650);
-//Vinos
-const Espumantes = new Productos(9,"Vino","Espumante",1500);
-const Rosso = new Productos(10,"Vino","Rosso",2000);
-const Bianco = new Productos(11,"Vino","Bianco",950);
-const Blends = new Productos(12,"Vino","Blends",1100);
-
-//Arrays a utilizar
-let Carta = [Margherita,cuatroStagioni,Esuberante,LaRegina,
-    QuattroFormaggi,Renato,FruttiDiMare,Parisienne,Espumantes,Rosso,Bianco,Blends]
-const carrito = []
-
-const consultarCarta = () =>{
-    let texto = "";
-    for(const a of Carta){
-        texto += `${a.id}) ${a.tipo} ${a.nombre} ${a.precio}\n`
-    }
-    let prod = parseInt(prompt(`Que producto desea llevar?:\n${texto} `))
-
-    if(prod >12 || prod < 1 || isNaN(prod)){
-        prod = parseInt(prompt(`Por favor, ingrese una valor admitido: \n${texto}`));
-    }
-    return prod;
-};
-
-let productosSeleccionados;
-
-// funcion donde elegís lo que queres comprar
-
-const llevarProducto = () =>{
-    let buscarProducto = Carta.find(
-        (element) => element.id === productosSeleccionados 
-    );
+    let titleSaludo = document.querySelector("#titleSaludo");
+    let inputNombre = document.querySelector('#inputNombre')
+    let formSaludo = document.querySelector('#formSaludo')
     
-
-    
-    let existencias = carrito.some((element) => element.id === productosSeleccionados)
-    console.log(existencias);
-
-    if(existencias){
-        buscarProducto.cantidad++
-    }else{
-        buscarProducto.cantidad = 1
-        carrito.push(buscarProducto);
-    };
-
-
-
-    const continuar = confirm("Desea seguir comprando?");
-    
-    if(continuar){
-        productosSeleccionados = consultarCarta();
-        llevarProducto()
-    }
-}
-
-//funcion donde te muestra lo que elegiste y subtotal
-
-const mostrarProductos = () =>{
-    const divPedidos = document.createElement("div");
-    divPedidos.className = "pedido fw-bold text-white border border-3 border-success mt-3";
-    containerJs.appendChild(divPedidos);
-
-    carrito.forEach((element) => {
-        divPedidos.innerHTML += `<div class="ordenes mx-auto bg-info">
-        <h3>${element.nombre.toUpperCase()}</h3>
-        <h4> Precio unitario: ${element.precio} </h4>
-        <h4> Cantidad:  ${element.cantidad} </h4>
-        <p> Subtotal: ${element.precio * element.cantidad} </p>
-
-        </div>`
+    formSaludo.addEventListener('submit', (e) =>{
+        e.preventDefault();
+        titleSaludo.innerHTML = `<h1>¡Benvenuto! ${inputNombre.value.toUpperCase()}, esto es : </h1>`
     });
 };
+saludar()
+//mi base de datos con mis productos
+const Carta = [
+    {
+        id: 1,
+        tipo: "Pizza",
+        nombre:"Salsiccia",
+        precio: 950,
 
-//funcion donde te muestra cuanto pagas por todos los productos elegidos
+    },
+    {
+        id: 1,
+        tipo: "Pizza",
+        nombre:"Margherita",
+        precio: 1000,
 
-const calcularTotal = () =>{
-    let montofinal = document.createElement("div")
-    montofinal.className = "ordenes mx-auto bg-success text-white"
+    },
+    {
+        id: 1,
+        tipo: "Pizza",
+        nombre:"Rucula",
+        precio: 1200,
 
-    let total = carrito.reduce((acc, ite)=>acc + ite.precio * ite.cantidad ,0)
+    },
+    {
+        id: 1,
+        tipo: "Pizza",
+        nombre:"Aglio e Cepolla",
+        precio: 1200,
 
-    montofinal.innerHTML = `<h2>El total es : $${total}</h2>`
+    },
+    {
+        id: 1,
+        tipo: "Pasta",
+        nombre:"Spaghetti alla Carbonara",
+        precio: 520,
 
-    containerJs.appendChild(montofinal);
+    },
+    {
+        id: 1,
+        tipo: "Pasta",
+        nombre:"Penne Rigatti Mediterráneo",
+        precio: 750,
+
+    },
+    {
+        id: 1,
+        tipo: "Pasta",
+        nombre:"Frutti di Mare",
+        precio: 980,
+
+    },
+    {
+        id: 1,
+        tipo: "Pasta",
+        nombre:"Pappardelle alla Bolognese",
+        precio: 650,
+
+    },
+    {
+        id: 1,
+        tipo: "Vino",
+        nombre:"Chateaneuf du Pape",
+        precio: 1500,
+
+    },
+    {
+        id: 1,
+        tipo: "Vino",
+        nombre:"Campo Viejo Rioja DOM",
+        precio: 950,
+
+    },
+    {
+        id: 1,
+        tipo: "Vino",
+        nombre:"Burra Brook vino blanco",
+        precio: 1100,
+
+    },
+    {
+        id: 1,
+        tipo: "Vino",
+        nombre:"Madame Cliquot",
+        precio: 15000,
+
+    }
+]
+
+let carrito = JSON.parse(localStorage.getItem('carrito')) ?? []
+let bodyCarrito = document.querySelector("#canvaCarritoBody")
+
+let seleccionarProducto = () =>{
+    let divCards = document.getElementById('divCards')
+    divCards.addEventListener('click', (e) =>{
+        añadirCarrito(e);
+    })
 }
 
- productosSeleccionados = consultarCarta();
- llevarProducto();
-mostrarProductos();
-calcularTotal();
+let añadirCarrito = (e) =>{
+    if(e.target.querySelector('#btnCarrito')){
+        setearCarrito(e.target.carrito)
+    }
+}
+//declaro como se cargan los productos a mi carrito
+setearCarrito = (Carta) => {
+    let producto = {
+        id: Carta.querySelector('#btnCarrito').id,
+        nombre: Carta.nombre,
+        precio: Carta.precio,
+        cantidad: 1
+    }
+    if(carrito.hasOwnProperty(producto.id)){
+        producto.cantidad = carrito[producto.id]++
+    }
+
+    carrito[producto.id] = {...producto}
+
+    mostrarCarrito();
+}
+//funcion para imprimir mis productos en el off canva
+let mostrarCarrito = () =>{
+    bodyCarrito.innerHTML += `
+    <div class=" mx-auto bg-info">
+    <h3>${Carta.nombre}</h3>
+    <h4> Precio unitario: ${Carta.precio} </h4>
+    <h4> Cantidad:  ${Carta.cantidad} </h4>
+    </div>
+    `
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+//funcion de los botones de agregar producto y limpiar el carrito
+let botonCarrito = (e) =>{
+    //agregar
+    if(e.target.e.target.querySelector('#btnCarrito')){
+        const product = carrito[e.target.id]
+        product.cantidad++;
+        carrito[e.target.id] = {...product}
+        mostrarCarrito()
+    }
+    //eliminar
+    if(e.target.e.target.querySelector('#btnVaciarCarrito')){
+        const product = carrito[e.target.id]
+        product.cantidad--;
+        if(product === 0){
+            delete carrito[e.target.id]
+        }
+        mostrarCarrito()
+    }
+    
+}
+//funcion del total de la compra
+let mostrarTotal = () =>{
+    
+    let total = carrito.reduce((acc, ite)=>acc + ite.precio * ite.cantidad ,0)
+    bodyCarrito.innerHTML = `<h6 class="bg-danger">El total es : $${total}</h6>`
+    ;
+}
+
+//LocalStorage
+if (localStorage.getItem("carrito")) {
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+    mostrarCarrito();
+  }
