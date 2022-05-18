@@ -14,77 +14,88 @@ const Carta = [
         tipo: "Pizza",
         nombre: "Margherita",
         precio: 1000,
-        cantidad: 1
+        cantidad: 1,
+        imagen:"../assets/images/pizzaCard2.jpg"
     },
     {
         id: 2,
         tipo: "Pizza",
         nombre: "Rucula",
         precio: 1200,
-        cantidad: 1
+        cantidad: 1,
+        imagen:"../assets/images/pizzaCard3.jpg"
     },
     {
         id: 3,
         tipo: "Pizza",
         nombre: "Aglio e Cepolla",
         precio: 1200,
-        cantidad: 1
+        cantidad: 1,
+        imagen:"../assets/images/pizzaCard4.jpg"
     },
     {
         id: 4,
         tipo: "Pasta",
         nombre: "Spaghetti alla Carbonara",
         precio: 520,
-        cantidad: 1
+        cantidad: 1,
+        imagen:"../assets/images/pastaCard1.jpg"
     },
     {
         id: 5,
         tipo: "Pasta",
         nombre: "Penne Rigatti Mediterráneo",
         precio: 750,
-        cantidad: 1
+        cantidad: 1,
+        imagen:"../assets/images/pastaCard2.jpg"
     },
     {
         id: 6,
         tipo: "Pasta",
         nombre: "Frutti di Mare",
         precio: 980,
-        cantidad: 1
+        cantidad: 1,
+        imagen: "../assets/images/pastaCard3.jpg"
     },
     {
         id: 7,
         tipo: "Pasta",
         nombre: "Pappardelle alla Bolognese",
         precio: 650,
-        cantidad: 1
+        cantidad: 1,
+        imagen: "../assets/images/pastaCard4.jpg"
     },
     {
         id: 8,
         tipo: "Vino",
         nombre: "Chateaneuf du Pape",
         precio: 1500,
-        cantidad: 1
+        cantidad: 1,
+        imagen:"../assets/images/vinoCard1.jpg"
     },
     {
         id: 9,
         tipo: "Vino",
         nombre: "Campo Viejo Rioja DOM",
         precio: 950,
-        cantidad: 1
+        cantidad: 1,
+        imagen: "../assets/images/vinoCard2.jpg"
     },
     {
         id: 10,
         tipo: "Vino",
         nombre: "Burra Brook vino blanco",
         precio: 1100,
-        cantidad: 1
+        cantidad: 1,
+        imagen: "../assets/images/vinoCard3.jpg"
     },
     {
         id: 11,
         tipo: "Vino",
         nombre: "Madame Cliquot",
         precio: 15000,
-        cantidad: 1
+        cantidad: 1,
+        imagen: "../assets/images/vinoCard4.jpg"
     },
 ];
 
@@ -105,7 +116,6 @@ let añadirCarrito = (e) => {
       
     } else
         carrito.push(Carta[e.target.id])
-    console.log(carrito)
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
     subtotal()
@@ -115,10 +125,11 @@ let subtotal = () =>{
     bodyCarrito.innerHTML = ``
     carrito.forEach(Carta => {
         bodyCarrito.innerHTML += `
-        <div class=" mx-auto bg-info">
-        <img src=${Carta.imagen} class="img-fluid" />
-        <h3>${Carta.nombre}</h3>
-        <h4> Precio unitario: ${Carta.precio} </h4>
+        <div class="card cardCarrito p-3" style="width: 18rem;">
+        <img src=${Carta.imagen} class="img-fluid card-img-top" />
+        <div class="card-body">
+        <h3 class="card-title text-light fs-bold">${Carta.nombre}</h3>
+        <h4 class="card-text"> Precio unitario: ${Carta.precio} </h4>
         <h4> Cantidad:  ${Carta.cantidad} </h4>
         </div>
         `
@@ -128,9 +139,15 @@ let subtotal = () =>{
 }
 
 let mostrarTotal = () => {
-    console.log("hola")
     let total = carrito.reduce((acc, ite) => acc + ite.precio * ite.cantidad, 0);
-    totalCompra.innerHTML = `<h6 class="bg-danger">El total es : $ ${total} </h6>`;
+    totalCompra.innerHTML = `  
+    <div class="card  bg-success style="width: 18rem;">
+        <h2 class="card-header text-light" >El total es : </h2>
+        <div class="card-body" style="width: 18rem;">
+            <h3 class="card-text text-light">$ ${total} </h3>
+        </div>
+    </div>    
+        `;
   };
 
 let vaciarCarrito = () => {

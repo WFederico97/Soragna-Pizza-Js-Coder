@@ -79,7 +79,6 @@ body {
     margin:auto;
     font-size: 16px;
 }
-  
 
 #carousel1 {
     img {
@@ -129,7 +128,13 @@ body {
     -o-transform:scale(1.10);
     transform:scale(1.10);
 }
-
+.cardCarrito {
+    background-color: #4286f49b;
+}
+.cardCarrito.h5{
+    text-shadow: $textEffectBlue;
+    font-family: 'Abril Fatface', cursive;
+}
 /*********Salon*****/
 .salon {
     h1 {
