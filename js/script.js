@@ -140,7 +140,7 @@ let subtotal = () =>{
         <img src=${Carta.imagen} class="img-fluid card-img-top" />
         <div class="card-body">
         <h3 class="card-title text-light fs-bold">${Carta.nombre}</h3>
-        <h4 class="card-text"> Precio unitario: ${Carta.precio} </h4>
+        <h4 class="card-text"> Precio unitario: $${Carta.precio} </h4>
         <h4> Cantidad:  ${Carta.cantidad} </h4>
         </div>
         `
@@ -152,7 +152,7 @@ let subtotal = () =>{
 let mostrarTotal = () => {
     let total = carrito.reduce((acc, ite) => acc + ite.precio * ite.cantidad, 0);
     totalCompra.innerHTML = `  
-    <div class="card  bg-success style="width: 18rem;">
+    <div class="card  bg-success  style="width: 18rem;">
         <h2 class="card-header text-light" >El total es : </h2>
         <div class="card-body" style="width: 18rem;">
             <h3 class="card-text text-light">$ ${total} </h3>
