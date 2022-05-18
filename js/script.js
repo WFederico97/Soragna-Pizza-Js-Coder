@@ -118,6 +118,17 @@ let añadirCarrito = (e) => {
         carrito.push(Carta[e.target.id])
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
+    Toastify({
+        text: "¡Bravo! Producto agregado",
+        duration: 2000,
+        class:"toastCarrito",
+        style: {
+            background: "linear-gradient(to right, #0BD605, #FFFFFF, #FF0000)",
+            color: "#000000"
+        },
+        close: true,
+    }).showToast();
+
     subtotal()
 }
 
