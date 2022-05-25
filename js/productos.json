@@ -1,0 +1,98 @@
+[
+    {
+        "id": 0,
+        "tipo": "Pizza",
+        "nombre": "Salsiccia",
+        "precio": 950,
+        "cantidad": 1,
+        "imagen": "../assets/images/pizzaCard1.jpg"
+    },
+    {
+        "id": 1,
+        "tipo": "Pizza",
+        "nombre": "Margherita",
+        "precio": 1000,
+        "cantidad": 1,
+        "imagen":"../assets/images/pizzaCard2.jpg"
+    },
+    {
+        "id": 2,
+        "tipo": "Pizza",
+        "nombre": "Rucula",
+        "precio": 1200,
+        "cantidad": 1,
+        "imagen":"../assets/images/pizzaCard3.jpg"
+    },
+    {
+        "id": 3,
+        "tipo": "Pizza",
+        "nombre": "Aglio e Cepolla",
+        "precio": 1200,
+        "cantidad": 1,
+        "imagen":"../assets/images/pizzaCard4.jpg"
+    },
+    {
+        "id": 4,
+        "tipo": "Pasta",
+        "nombre": "Spaghetti alla Carbonara",
+        "precio": 520,
+        "cantidad": 1,
+        "imagen":"../assets/images/pastaCard1.jpg"
+    },
+    {
+        "id": 5,
+        "tipo": "Pasta",
+        "nombre": "Penne Rigatti Mediterráneo",
+        "precio": 750,
+        "cantidad": 1,
+        "imagen":"../assets/images/pastaCard2.jpg"
+    },
+    {
+        "id": 6,
+        "tipo": "Pasta",
+        "nombre": "Frutti di Mare",
+        "precio": 980,
+        "cantidad": 1,
+        "imagen": "../assets/images/pastaCard3.jpg"
+    },
+    {
+        "id": 7,
+        "tipo": "Pasta",
+        "nombre": "Pappardelle alla Bolognese",
+        "precio": 650,
+        "cantidad": 1,
+        "imagen": "../assets/images/pastaCard4.jpg"
+    },
+    {
+        "id": 8,
+        "tipo": "Vino",
+        "nombre": "Chateaneuf du Pape",
+        "precio": 1500,
+        "cantidad": 1,
+        "imagen":"../assets/images/vinoCard1.jpg"
+    },
+    {
+        "id": 9,
+        "tipo": "Vino",
+        "nombre": "Campo Viejo Rioja DOM",
+        "precio": 950,
+        "cantidad": 1,
+        "imagen": "../assets/images/vinoCard2.jpg"
+    },
+    {
+        "id": 10,
+        "tipo": "Vino",
+        "nombre": "Burra Brook vino blanco",
+        "precio": 1100,
+        "cantidad": 1,
+        "imagen": "../assets/images/vinoCard3.jpg"
+    },
+    {
+        "id": 11,
+        "tipo": "Vino",
+        "nombre": "Madame Cliquot",
+        "precio": 15000,
+        "cantidad": 1,
+        "imagen": "../assets/images/vinoCard4.jpg"
+    }
+]
