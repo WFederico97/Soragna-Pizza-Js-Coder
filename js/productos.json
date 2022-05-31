@@ -37,7 +37,7 @@
         "nombre": "Spaghetti alla Carbonara",
         "precio": 520,
         "cantidad": 1,
-        "imagen":"../assets/images/pastaCard1.jpg"
+        "imagen":"../assets/images/pastaCard3.jpg"
     },
     {
         "id": 5,
@@ -45,7 +45,7 @@
         "nombre": "Penne Rigatti Mediterráneo",
         "precio": 750,
         "cantidad": 1,
-        "imagen":"../assets/images/pastaCard2.jpg"
+        "imagen":"../assets/images/pastaCard1.jpg"
     },
     {
         "id": 6,
@@ -53,7 +53,7 @@
         "nombre": "Frutti di Mare",
         "precio": 980,
         "cantidad": 1,
-        "imagen": "../assets/images/pastaCard3.jpg"
+        "imagen": "../assets/images/pastaCard4.jpg"
     },
     {
         "id": 7,
@@ -61,7 +61,7 @@
         "nombre": "Pappardelle alla Bolognese",
         "precio": 650,
         "cantidad": 1,
-        "imagen": "../assets/images/pastaCard4.jpg"
+        "imagen": "../assets/images/pastaCard2.jpg"
     },
     {
         "id": 8,
