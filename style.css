@@ -89,14 +89,15 @@ body {
 }
 
 /******Carta*****/
-.carta h1 {
+.titulo {
   text-shadow: 3px 3px 3px #1453dc;
   font-family: 'Abril Fatface', cursive;
 }
 
-.card h5 {
+.carta h3 {
   text-shadow: 3px 3px 3px #1453dc;
   font-family: 'Abril Fatface', cursive;
+  color: #ffffff;
 }
 
 .carta p {
