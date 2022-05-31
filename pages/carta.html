@@ -13,6 +13,7 @@
   <script src="https://kit.fontawesome.com/e23b8f29aa.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="sweetalert2.min.css">
   <link rel="stylesheet" href="../assets/fonts/Mukta-SemiBold.ttf" />
   <title>SORAGNA-Carta</title>
 </head>
@@ -45,200 +46,18 @@
             <li class="nav-item">
               <a class="nav-link" href="elaboracion.html">Nosotros</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contacto.html">Reservas</a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <main class="carta">
+  <main >
     <h1 class="titulo d-flex justify-content-center text-white">
       La mejor elección al alcance de tu mano
     </h1>
-    <!---Pizzas-->
-    <div class="row row-cols-1 row-cols-md-4 g-4 m-2 " id="divCards">
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/pizzaCard1.jpg" class="pizzaCard1 img-fluid" alt="Pizza Salsiccia" />
-          <div class="card-body">
-            <h5 class="card-title">Salsiccia</h5>
-            <p class="card-text">
-              Base de nuestra salsa, queso mozzarella y chorizo casero
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="0" >
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/pizzaCard2.jpg" class="pizzaCard2 img-fluid" alt="Pizza margherita" />
-          <div class="card-body">
-            <h5 class="card-title">Margherita</h5>
-            <p class="card-text">
-              ¡Un Clásico!, base de salsa de tomate, muzzarella di fior di
-              latte con albahaca fresca de la huerta
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="1" >
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/pizzaCard3.jpg" class="pizzaCard3 img-fluid" alt="Pizza de Rucula" />
-          <div class="card-body">
-            <h5 class="card-title">Rucula</h5>
-            <p class="card-text">
-              Una de las mas proclamadas, viene con rucula fresca, tomates
-              confitados en oliva y ajo, aceitunas negras y la base de salsa
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="2" >
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/pizzaCard4.jpg" class="pizzaCard4 img-fluid" alt="Pizza de Ajo y Cebolla" />
-          <div class="card-body">
-            <h5 class="card-title">Aglio e Cepolla</h5>
-            <p class="card-text">
-              Nuestra novedosa variedad. Viene con cebolla morada, aceite de
-              ajo, muzzarella y cilantro.
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="3">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <!---Pastas-->
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/pastaCard1.jpg" class="pastaCard1 img-fluid" alt="Penne Rigatti " />
-          <div class="card-body">
-            <h5 class="card-title">Penne Rigatti Mediterráneo</h5>
-            <p class="card-text">
-              Viene con salsa roja de San Marzano, pimienta recien molida y
-              parmigiano reggiano.
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="4">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/pastaCard2.jpg" class="pastaCard2 img-fluid" alt="Pappardelle con Carne" />
-          <div class="card-body">
-            <h5 class="card-title">Pappardelle Bolognese</h5>
-            <p class="card-text">
-              La mas elegida, fideos cinta acompañados de salsa de tomate con
-              albahaca y trozos de lomo marinado en ajo y especias
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark"  onclick="añadirCarrito(event)" id="5">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/pastaCard3.jpg" class="pastaCard3 img-fluid" alt="Spaghetti Carbonara" />
-          <div class="card-body">
-            <h5 class="card-title">Spaghetti alla Carbonara</h5>
-            <p class="card-text">
-              Clasico de los clásicos, spaghettis con una salsa a base de
-              panceta, pimienta y yemas de huevo.
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark"  onclick="añadirCarrito(event)" id="6">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/pastaCard4.jpg" class="pastaCard4 img-fluid" alt="Spaghetti frutti di mare" />
-          <div class="card-body">
-            <h5 class="card-title">Frutti di Mare</h5>
-            <p class="card-text">
-              Spaghetti salteado con salsa roja , caldo de pescado y mariscos
-              frescos del dia junto con tomates disecados y ajo crujiente.
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="7" >
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <!---Vinos-->
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/vinoCard1.jpg" class="vinoCard1 img-fluid" alt="Chateaneuf du Pape vino tinto" />
-          <div class="card-body">
-            <h5 class="card-title">Chateaneuf du Pape</h5>
-            <p class="card-text">
-              ¡Santo Vino!, con notas de madera, frutos secos y ciruelas.
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="8" >
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/vinoCard2.jpg" class="vinoCard2 img-fluid" alt="Vino tinto Campo Viejo" />
-          <div class="card-body">
-            <h5 class="card-title">Campo Viejo</h5>
-            <p class="card-text">
-              Exquisito Rioja traído de España, sutil y de buen cuerpo.
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="9">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/vinoCard3.jpg" class="vinoCard3 img-fluid" alt="Burra Brook vino blanco" />
-          <div class="card-body">
-            <h5 class="card-title">Burra Brook</h5>
-            <p class="card-text">
-              Excelente Pinot Grigio, un buen vino blanco para acompañar
-              nuestra pasta Frutti di Mare
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="10">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25">
-          <img src="../assets/images/vinoCard4.jpg" class="vinoCard4 img-fluid" alt="Madame Cliquot Champagne" />
-          <div class="card-body">
-            <h5 class="card-title">Madame Cliquot</h5>
-            <p class="card-text">
-              Excelente espumante, tanto para festejar como tambien para
-              acompañar una buena pizza.
-            </p>
-            <button type="button" class="btn btn-success btn-outline-dark" onclick="añadirCarrito(event)" id="11" >
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
+    <div id="productosCarta" class="carta row row-cols-1 row-cols-md-4 g-4 m-2">
+
     </div>
     <!---Canva para carrito de compras-->
     <div class="d-grid gap-2 col-6 mx-auto">
@@ -262,6 +81,7 @@
           
         </div> 
         <button type="button" class="btn btn-danger btn-outline-dark" id="btnVaciarCarrito" onclick="vaciarCarrito()">Vaciar Carrito</button> 
+        <button type="button" class="btn btn-info btn-outline-dark" id="finalizarCompra" onclick="finalizarCompra()">Finalizar Compra</button>
       </div>
     </div>
   </main>
@@ -284,11 +104,13 @@
             class="fa-solid fa-map-location-dot fa-2xl m-3" id="locationIcon"></i></a>
       </li>
       <li class="ms-3">
-        <a class="text-muted" href="contacto.html"><i class="fa-solid fa-calendar-check fa-2xl m-3"
+        <a class="text-muted" href="#"><i class="fa-solid fa-calendar-check fa-2xl m-3"
             id="calendar"></i></a>
       </li>
     </ul>
   </footer>
+  <!--Sweet Alert--->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!---Toastify-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <!--Javascript-->
