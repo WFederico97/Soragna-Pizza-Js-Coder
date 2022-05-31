@@ -1,127 +1,64 @@
-
-//mi base de datos con mis productos
-const Carta = [
-    {
-        id: 0,
-        tipo: "Pizza",
-        nombre: "Salsiccia",
-        precio: 950,
-        cantidad: 1,
-        imagen: "../assets/images/pizzaCard1.jpg"
-    },
-    {
-        id: 1,
-        tipo: "Pizza",
-        nombre: "Margherita",
-        precio: 1000,
-        cantidad: 1,
-        imagen:"../assets/images/pizzaCard2.jpg"
-    },
-    {
-        id: 2,
-        tipo: "Pizza",
-        nombre: "Rucula",
-        precio: 1200,
-        cantidad: 1,
-        imagen:"../assets/images/pizzaCard3.jpg"
-    },
-    {
-        id: 3,
-        tipo: "Pizza",
-        nombre: "Aglio e Cepolla",
-        precio: 1200,
-        cantidad: 1,
-        imagen:"../assets/images/pizzaCard4.jpg"
-    },
-    {
-        id: 4,
-        tipo: "Pasta",
-        nombre: "Spaghetti alla Carbonara",
-        precio: 520,
-        cantidad: 1,
-        imagen:"../assets/images/pastaCard1.jpg"
-    },
-    {
-        id: 5,
-        tipo: "Pasta",
-        nombre: "Penne Rigatti Mediterráneo",
-        precio: 750,
-        cantidad: 1,
-        imagen:"../assets/images/pastaCard2.jpg"
-    },
-    {
-        id: 6,
-        tipo: "Pasta",
-        nombre: "Frutti di Mare",
-        precio: 980,
-        cantidad: 1,
-        imagen: "../assets/images/pastaCard3.jpg"
-    },
-    {
-        id: 7,
-        tipo: "Pasta",
-        nombre: "Pappardelle alla Bolognese",
-        precio: 650,
-        cantidad: 1,
-        imagen: "../assets/images/pastaCard4.jpg"
-    },
-    {
-        id: 8,
-        tipo: "Vino",
-        nombre: "Chateaneuf du Pape",
-        precio: 1500,
-        cantidad: 1,
-        imagen:"../assets/images/vinoCard1.jpg"
-    },
-    {
-        id: 9,
-        tipo: "Vino",
-        nombre: "Campo Viejo Rioja DOM",
-        precio: 950,
-        cantidad: 1,
-        imagen: "../assets/images/vinoCard2.jpg"
-    },
-    {
-        id: 10,
-        tipo: "Vino",
-        nombre: "Burra Brook vino blanco",
-        precio: 1100,
-        cantidad: 1,
-        imagen: "../assets/images/vinoCard3.jpg"
-    },
-    {
-        id: 11,
-        tipo: "Vino",
-        nombre: "Madame Cliquot",
-        precio: 15000,
-        cantidad: 1,
-        imagen: "../assets/images/vinoCard4.jpg"
-    },
-];
-
+//Variables declaradas
+let productos = []
 let carrito = JSON.parse(localStorage.getItem("carrito")) ?? [];
 let bodyCarrito = document.querySelector("#canvaCarritoBody");
 let totalCompra = document.querySelector('#totalCompra')
 
+//Fetch
+async function obtenerProductos() {
+    const response = await fetch("../js/productos.json");
+    return await response.json();
+}
 
-let añadirCarrito = (e) => {
-    if (carrito.find(producto => producto.id == e.target.id)) {
+//Funcion para imprimir los productos del json en mi html
+const mostrarProductos = () => {
+    let divProductos = document.querySelector('#productosCarta');
+    divProductos.addEventListener('click', (e) => {
+        añadirCarrito(e);
+    });
+
+    obtenerProductos().then((producto) => {
+        productos = producto
+        producto.forEach((element) => {
+            const { imagen, nombre, precio, id } = element;
+            divProductos.innerHTML += `
+            <div class="col container-fluid">    
+                <div class="card cardCarta border-primary mb-3 bg-light bg-opacity-25"> 
+                    <div class="card-header">
+                        <img src="${imagen}" class="img-fluid">
+                    </div>
+                    <div class="card-body">
+                        <h3>${nombre}</h3>
+                        <p>$${precio}</p>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success btn-outline-dark"  id="${id}" >
+                Añadir al carrito
+              </button>
+            </div>    
+            `
+        })
+    })
+    subtotal();
+
+}
+//Funcion de añadir cada producto al carrito a traves del btn correspondiente
+const añadirCarrito = (e) => {
+    let producto = productos.find(producto => producto && producto.id == e.target.id)
+    if (carrito.find(producto => producto && producto.id == e.target.id)) {
         for (let index = 0; index < carrito.length; index++) {
             const producto = carrito[index];
             if (producto.id == e.target.id) {
                 producto.cantidad++
             }
         }
-          
-      
     } else
-        carrito.push(Carta[e.target.id])
+        carrito.push({ ...producto, cantidad: 1, })
     localStorage.setItem("carrito", JSON.stringify(carrito));
-
     Toastify({
         text: "¡Bravo! Producto agregado",
         duration: 2000,
-        class:"toastCarrito",
+        class: "toastCarrito",
         style: {
             background: "linear-gradient(to right, #0BD605, #FFFFFF, #FF0000)",
             color: "#000000"
@@ -130,9 +67,11 @@ let añadirCarrito = (e) => {
     }).showToast();
 
     subtotal()
+
 }
 
-let subtotal = () =>{
+//Funcion de mostrar los productos que quiero comprar en el canva del carrito de compras
+const subtotal = () => {
     bodyCarrito.innerHTML = ``
     carrito.forEach(Carta => {
         bodyCarrito.innerHTML += `
@@ -149,7 +88,8 @@ let subtotal = () =>{
 
 }
 
-let mostrarTotal = () => {
+//Monto final de los productos en el carrito de compras
+const mostrarTotal = () => {
     let total = carrito.reduce((acc, ite) => acc + ite.precio * ite.cantidad, 0);
     totalCompra.innerHTML = `  
     <div class="card  bg-success  style="width: 18rem;">
@@ -159,12 +99,39 @@ let mostrarTotal = () => {
         </div>
     </div>    
         `;
-  };
 
-let vaciarCarrito = () => {
+};
+//Borrar carrito 
+const vaciarCarrito = () => {
     carrito = []
     bodyCarrito.innerHTML = ''
     totalCompra.innerHTML = ''
 
-    localStorage.setItem("carrito",JSON.stringify(carrito))
+    localStorage.setItem("carrito", JSON.stringify(carrito))
 }
+
+//Realizar la compra de mis productos
+const finalizarCompra = () => {
+    carrito = []
+    bodyCarrito.innerHTML = ''
+    totalCompra.innerHTML = ''
+
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    Swal.fire({
+        title: '¡Bravissimo!',
+        text: '¡Tu compra se ha realizado con éxito, espero que la disfrutes!',
+        imageUrl: '../assets/images/italianoModal.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: "linear-gradient(to right, #0BD605, #FFFFFF, #FF0000)",
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+    })
+}
+
+mostrarProductos();
